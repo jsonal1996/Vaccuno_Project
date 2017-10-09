@@ -1,0 +1,40 @@
+#list table{
+	
+	border-collapse:collapse;
+	width:20%;
+	border: 1px solid yellow;
+}
+#list{
+	margin-left:-300px;
+		
+	padding-left:30 px;
+	height:800%;
+	width:170%;
+	margin-top: 40px;
+}
+#list th {
+	border:1px solid black;
+
+	color:white ;
+	font-weight: bold;
+	font-family: arial;
+	font-size: 20px;
+	background-color: #0093AF;
+	
+}
+#list td{
+	
+	color:blue ;
+	font-weight: bold;
+	font-family: arial;
+	font-size: 20px;
+	text-align:center;
+	height: 20px;
+	background-color:#F0F8FF;
+	border:1px solid black;
+}
+
+#list tr{
+	color:white;
+
+}
