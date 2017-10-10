@@ -73,7 +73,7 @@ setTimeout("disableBackButton()", 0);
 			<img src="images/headVa.jpg" style="float:right; margin-left: 500px; padding-top: 25px; height: 110px;width: 400px" />
 			<div style="float:left;width: 100%;background-color:#0093AF;height:45%;border-radius:0px;">
 		<h1 style=" color:white;margin-left:39%;height:10%;font-style: arial;font-weight: bold;">Vaccine List</h1>
-		<a style="color:white;font-weight:bold;float:left;margin-top:-2%;font-size:20px" href="LogoutServ">LOG OUT</a></div>
+		<a style="margin-right:2%;color:white;font-weight:bold;float:right;margin-top:-2%;font-size:20px;" href="LogoutServ">LOG OUT</a></div>
 	</div>
 	
 	<div

@@ -73,9 +73,11 @@ background-size: cover;
 			<img src="images/headVa.jpg" style="float:right; margin-left: 500px; padding-top: 25px; height: 110px;width: 400px" />
 			<div style="float:left;width: 100%;background-color:#0093AF;height:45%;border-radius:0px;">
 		<h1 style=" color:white;margin-left:39%;height:10%;font-style: arial;font-weight: bold;">Vaccine List</h1>
-		<a style="color:white;font-weight:bold;float:left;margin-top:-2%;font-size:20px" href="LogoutServ">LOG OUT</a></div>
+		<a style="color:white;font-weight:bold;float:left;margin-top:-2%;font-size:30px;text-decoration:none" href="AddVaccine.jsp">Add Vaccine</a></div>
+		
+		<a style="margin-right:2%;color:white;font-weight:bold;float:right;margin-top:-2%;font-size:20px" href="LogoutServ">LOG OUT</a></div>
 	</div>
-				<a href="AddVaccine.jsp"style="display:inline-block;background-color:#0093AF; color:white;font-size:40px;margin-top:5%">ADD VACCINE</a>
+				<!-- <a href="AddVaccine.jsp"style="display:inline-block;background-color:#0093AF; color:white;font-size:40px;margin-top:5%">ADD VACCINE</a>-->
 	
 	<div
 		style="margin: auto; width: 50%; margin-top: 40px; /*border: 1px solid #73AD21;*/ padding: 15px;">

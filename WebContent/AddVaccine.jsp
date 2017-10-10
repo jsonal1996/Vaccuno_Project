@@ -1,3 +1,15 @@
+<%
+	
+	
+	String usename = (String) session.getAttribute("uname");
+	//System.out.println("Helllo "+usename);
+	if (usename == null) {
+		response.sendRedirect("loginpage.jsp");
+	
+		
+	}
+	else{
+%>
 <!DOCTYPE html>
 	<html>
 	<head>
@@ -87,3 +99,6 @@
 			<br>
 	</body>
 </html>
+<%
+	}
+%>

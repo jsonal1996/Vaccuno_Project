@@ -1,11 +1,16 @@
 
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.mongodb.DBObject;
 
 /**
  * Servlet implementation class Servlet_AddVaccine
@@ -43,14 +48,22 @@ public class Servlet_AddVaccine extends HttpServlet {
 		String minNoDoses = request.getParameter("mindos");
 		
 		System.out.println(name+""+vendor+" "+cost);
-		
+		HttpSession session=request.getSession();
+		String usename = (String) session.getAttribute("uname");
+		System.out.println("Helllo "+usename);
+		if (usename == null) {
+			response.sendRedirect("loginpage.jsp");
+			
+		}
+		else{
 		
 
 //		if(usertype.equals("doctor")){
 			
 			Vaccination v = new Vaccination();
 			v.addVacc(name,cost,vendor,disease,minNoDoses);
-
+			List<DBObject> resultSet = v.getdetails();
+			session.setAttribute("searchresults",resultSet);
 			//HttpSession session = request.getSession();
 			/* if(user == NULL){
 				request.setAttribute("error","Invalid User name and password or sign up");
@@ -60,7 +73,8 @@ public class Servlet_AddVaccine extends HttpServlet {
 			
 			//session.setAttribute("username", username);
 			
-			response.sendRedirect("displayVaccine.jsp");
-	}
+			response.sendRedirect("VaccinelistServ");
+			return;
+	}}
 
 }

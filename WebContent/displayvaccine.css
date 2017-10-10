@@ -2,7 +2,6 @@
 	
 	border-collapse:collapse;
 	width:20%;
-	border: 1px solid yellow;
 }
 #list{
 	margin-left:-300px;
@@ -13,8 +12,7 @@
 	margin-top: 40px;
 }
 #list th {
-	border:1px solid black;
-
+	
 	color:white ;
 	font-weight: bold;
 	font-family: arial;
@@ -31,7 +29,6 @@
 	text-align:center;
 	height: 20px;
 	background-color:#F0F8FF;
-	border:1px solid black;
 }
 
 #list tr{
