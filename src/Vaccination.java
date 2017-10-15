@@ -6,6 +6,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.bson.Document;
+import org.bson.conversions.Bson;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
@@ -17,6 +18,8 @@ import com.mongodb.MongoClientURI;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.async.SingleResultCallback;
+import com.mongodb.client.result.DeleteResult;
 
 public class Vaccination {
 
@@ -41,36 +44,9 @@ public class Vaccination {
 		
 		db.getCollection().insertOne(document);
 	
-		/*MongoClient mongo = new MongoClient("localhost", 27017);
-		DB db = mongo.getDB("testdb");
-		DBCollection table = db.getCollection("Vaccintion");
-		BasicDBObject document = new BasicDBObject();
-			
-		document.put("name", name);
-		document.put("cost", cost);
-		document.put("vendor", vendor);
-		document.put("disease", diseases);
-		document.put("minnodoses", minNoDoses);
 		
-		table.insert(document);*/
 	}
 
-
-	/*public void displayVaccination() {
-		MongoClientURI uri = new MongoClientURI("mongodb://<user1>:<123hello123>@ds163494.mlab.com:63494/vaccuno");
-		MongoClient mongoClient = new MongoClient(uri);
-		
-		DB db = mongoClient.getDB(uri.getDatabase());
-		DBCollection collection = db.getCollection("Vaccination");
-
-		BasicDBObject query = new BasicDBObject();
-
-	   	 query.put("name", name);
-	   	 DBCursor cursor = collection.find();
-	   	 while(cursor.hasNext()) {
-   	     System.out.println(cursor.next());
-   	 }
-*/
 	   	 
 	   	 
 	   	public List<DBObject> getdetails(){
@@ -96,27 +72,35 @@ public class Vaccination {
 
 	   		return resultSet;
 
+	   	}
+	   	
+	   	void deleteVaccine(String gname){
+	   		MongoClientURI uri = new MongoClientURI("mongodb://sonal:qwerty@ds013475.mlab.com:13475/vaccuno");
+	   		MongoClient mongoClient = new MongoClient(uri);
+	        System.out.println("Connected to the database successfully");			
+	        DB db = mongoClient.getDB("vaccuno");
+	        DBCollection collection=db.getCollection("Vaccination");
+	        System.out.println("In Vaccinedelete");			
+
+	        DBObject obj= new BasicDBObject();
+			obj.put("name", gname);
+			
+	        collection.remove(obj);
+			
 	   		
-	        
-	   		
-	   	/*	MongoClient mongo = new MongoClient("localhost", 27017);
-			DB db = mongo.getDB("testdb");
-			DBCollection table = db.getCollection("Vaccintion");
-
-	   		DBCursor cursor = table.find();
-	   		List<DBObject> resultSet = new ArrayList<DBObject>();
-
-	   		while (cursor.hasNext()) {
-
-		   		DBObject o = cursor.next();
-		   		resultSet.add(o);
-
-	   		}
-
-	   		return resultSet;
-
-	   	}*/
-
+			System.out.println("In the java");
+			
+			
+			
+	   	}
+	   	
+	   	void updatevaccine(String costt,String namee){
+	   		connection db=new connection("Vaccination");
+	        System.out.println("In Vaccineupdate");		
+			Bson filter = new Document("name",namee);
+			Bson newValue = new Document("cost", costt);
+			Bson updateOperationDocument = new Document("$set", newValue);
+			db.getCollection().updateOne(filter, updateOperationDocument);
 
 	   	}
 }

@@ -28,7 +28,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Vaccine list</title>
+<title>Doctor details</title>
 
 <link type="text/css" rel="stylesheet" href="displayvaccine.css" />
 <!--<script type = "text/javascript" >
@@ -68,57 +68,47 @@ setTimeout("disableBackButton()", 0);
 	height: 135px;
 
 	">
-	
+
 			<img src="images/logo.jpg" style="float:left; margin-left: 100px; padding-top: 10px; height: 120px" />
 			<img src="images/headVa.jpg" style="float:right; margin-left: 500px; padding-top: 25px; height: 110px;width: 400px" />
-			<div style="float:left;width: 100%;background-color:#0093AF;height:45%;border-radius:0px;">
+			<div style="float:left;width: 100%;background-color:#0093AF;border-radius:0px;">
 		<!-- <h1 style=" color:white;height:10%;font-style: arial;font-weight: bold;float:left">Vaccine List</h1>-->
 		
-		<table>
+		<table style="height:auto">
 			<tr>
-				<th>
-					<form action="VaccinelistCustServ" method="post">
-						<input style="color:white;background-color:#0093AF;border: none;
-			    outline:none;font-size:20px;font-style: arial;font-weight: bold;float:left" type="submit"
-											value="Vaccine Details"><br>
-					</form>
-				</th>
-				<th>
-					<form  action="DoctorDetailServ" method="post">
-						<input style="color:white;background-color:#0093AF;border: none;
-			    outline:none;font-size:20px;height:45%;font-style: arial;font-weight: bold" type="submit"
-											value="Doctor Details"><br>
-					</form>
-				</th>
-				<th>
-					<form  action="LogoutServ" method="post">
-						<input style="color:white;background-color:#0093AF;border: none;
-		    outline:none;font-size:20px;height:45%;font-style: arial;font-weight: bold;" type="submit" value="Log Out"><br>
-					</form>
-				</th>
+				<th><form action="VaccinelistCustServ" method="post">
+			<div class="highlight"><input style="color:white;background-color:#0093AF;border: none;
+    outline:none;font-size:20px;height:45%;font-style: arial;font-weight: bold;float:left" type="submit"
+								value="Vaccine Details"></div>
+		</form></th>
+				<th><form  action="DoctorDetailServ" method="post">
+			<input style="color:white;background-color:#0093AF;border: none;
+    outline:none;font-size:20px;height:45%;font-style: arial;font-weight: bold" type="submit"
+								value="Doctor Details"><br>
+		</form></th>
+			<th><form  action="LogoutServ" method="post">
+				<input style="color:white;background-color:#0093AF;border: none;
+    outline:none;font-size:20px;;font-style: arial;font-weight: bold;" type="submit" value="Log Out"><br>
+			</form></th>
 			</tr>		
 		</table>
-		
 	</div>
 	</div>
-	<br><br>
+	
 	<div
-		style=" margin:auto;width: 50%; /*border: 1px solid #73AD21;*/ padding: 15px;">
-		<h1
-			style="margin-top: 70px;width:400px; margin-left:-50%;color:black;background-color:white;">Vaccine List</h1>
-
-		
-
+		style="margin: auto; width: 50%; margin-top: 40px; /*border: 1px solid #73AD21;*/ padding: 15px;">
+	
+		<h1	style="margin-top: 70px;width:400px; margin-left:-50%;color:black;background-color:white;">Doctor Details</h1>
 		
 		<div id="list">
 			<table>
 				<tr>
 
-					<th>Vaccine Name</th>
-					<th>Vaccine Cost</th>
-					<th>Vendor Name</th>
-					<th>Disease</th>
-					<th>Minimum No of Doses</th>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Phone Number</th>
+					<th>Location</th>
+					<th>License Number</th>
 					<th></th>
 					<!-- <th></th>-->
 				</tr>
@@ -136,16 +126,16 @@ setTimeout("disableBackButton()", 0);
 
 
 					<td><%=(String)info.get("name") %></td>
-					<td><%=(String)info.get("cost")%></td>
-					<td><%=(String)info.get("vendor")%></td>
-					<td><%=(String)info.get("disease") %></td>
-					<td><%=(String)info.get("minnodoses")%></td>
+					<td><%=(String)info.get("email")%></td>
+					<td><%=(String)info.get("phoneno")%></td>
+					<td><%=(String)info.get("location") %></td>
+					<td><%=(String)info.get("licenseno")%></td>
 					<td>
-						<form action="AddToDoServ" method="post">
+						<form action="AppointmentrvSe" method="post">
 							<input type="hidden" name="check" value="">
 							<input type="hidden" name="check1" value="">
 							<input style="font-weight: bold" type="submit"
-								value="Add To Do List"
+								value="Book Appointment"
 								onclick="return confirm('Are you sure you want to Add?')">
 						</form>
 
@@ -172,10 +162,9 @@ setTimeout("disableBackButton()", 0);
 					}
 				%>
 			</table>
+			
 			</div>
-			</div>
-
-		
+		</div>
 </body>
 </html>
 

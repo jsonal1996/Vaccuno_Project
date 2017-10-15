@@ -10,6 +10,7 @@ import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
+import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
 import com.mongodb.MongoException;
@@ -78,5 +79,30 @@ public class Doctor  {
 				return 0;
 			
 			}
+		public List<DBObject> getdocdetails(){
+	   		
+	   		MongoClientURI uri = new MongoClientURI("mongodb://sonal:qwerty@ds013475.mlab.com:13475/vaccuno");
+	   		MongoClient mongoClient = new MongoClient(uri);
+	        System.out.println("Connected to the database successfully");			
+	        DB db = mongoClient.getDB("vaccuno");
+	        DBCollection collection=db.getCollection("Doctor");
+			DBCursor cursor = collection.find();
+
+			
+			
+			System.out.println("In the java");
+			List<DBObject> resultSet = new ArrayList<DBObject>();
+
+	   		while (cursor.hasNext()) {
+
+		   		DBObject o = cursor.next();
+		   		resultSet.add(o);
+
+	   		}
+
+	   		return resultSet;
+
+
+	   	}
 			
 }

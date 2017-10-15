@@ -120,8 +120,8 @@ background-size: cover;
 					<td><%=(String)info.get("minnodoses")%></td>
 					<td>
 						<form action="DeleteVaccineServ" method="post">
-							<input type="hidden" name="check" value="">
-							<input type="hidden" name="check1" value="">
+							<input type="hidden" name="check" value="<%=(String)info.get("name") %>">
+							<!-- <input type="hidden" name="check1" value="">-->
 							<input style="font-weight: bold" type="submit"
 								value="Delete Vaccine"
 								onclick="return confirm('Are you sure you want to delete?')">
@@ -133,9 +133,8 @@ background-size: cover;
 							<br> <input type="text" name="newcost"
 								placeholder="Enter new Cost">
 								 <input type="hidden"
-								name="check" value=""> 
-								<input
-								type="hidden" name="check1" value=""><br>
+								name="check" value="<%=(String)info.get("name")%>"> 
+								<br>
 							<input style="font-weight: bold" type="submit"
 								value="Update Vaccine Cost"
 								onclick="return confirm('Are you sure you want to update?')"><br>

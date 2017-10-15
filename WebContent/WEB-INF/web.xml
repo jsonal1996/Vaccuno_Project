@@ -3,7 +3,6 @@
   <display-name>Vaccuno_Pro</display-name>
   <welcome-file-list>
     <welcome-file>loginpage.jsp</welcome-file>
-    
   </welcome-file-list>
   <servlet>
     <description></description>
@@ -104,5 +103,35 @@
   <servlet-mapping>
     <servlet-name>VaccinelistServ</servlet-name>
     <url-pattern>/VaccinelistServ</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DoctorDetailServ</display-name>
+    <servlet-name>DoctorDetailServ</servlet-name>
+    <servlet-class>DoctorDetailServ</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DoctorDetailServ</servlet-name>
+    <url-pattern>/DoctorDetailServ</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteVaccineServ</display-name>
+    <servlet-name>DeleteVaccineServ</servlet-name>
+    <servlet-class>DeleteVaccineServ</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteVaccineServ</servlet-name>
+    <url-pattern>/DeleteVaccineServ</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UpdateVaccineServ</display-name>
+    <servlet-name>UpdateVaccineServ</servlet-name>
+    <servlet-class>UpdateVaccineServ</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateVaccineServ</servlet-name>
+    <url-pattern>/UpdateVaccineServ</url-pattern>
   </servlet-mapping>
 </web-app>
