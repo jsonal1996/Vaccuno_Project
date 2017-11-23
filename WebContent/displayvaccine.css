@@ -1,12 +1,37 @@
-.highlight input:hover { 
-    background-color: yellow;
+/* Style the tab */
+div.tab {
+    overflow: hidden;
+	background-color:#0093AF;
+}
+/* Style the buttons inside the tab */
+div.tab form {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 14px;
+    transition: 0.3s;
+    font-size: 17px;
 }
 
+/* Change background color of buttons on hover */
+div.tab form:hover {
+	background-color:#F0F8FF;
+
+}
+
+/* Create an active/current tablink class */
+div.tab form.active {
+    background-color: #ccc;
+}
 #list table{
 	
 	border-collapse:collapse;
-	width:20%;
-	margin-top: 40px;
+	width:100%;
+	
+	/*	border:1px solid black;*/
+	
 	
 }
 #list{
@@ -14,8 +39,9 @@
 		
 	padding-left:30 px;
 	height:800%;
-	width:170%;
+	width:100%;
 	margin-top: 40px;
+	
 }
 #list th {
 	
@@ -33,12 +59,18 @@
 	font-family: arial;
 	font-size: 20px;
 	text-align:center;
-	width:3%;
-	height: 20px;
+	width:100%;
+	height: auto;
+	padding-top: .5em;
+    padding-bottom: .5em;
 	background-color:#F0F8FF;
+	/*border:1px solid black;*/
 }
+
 
 #list tr{
 	color:white;
+		border: 5px solid transparent;
+	
 
 }

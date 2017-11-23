@@ -71,33 +71,30 @@ setTimeout("disableBackButton()", 0);
 	
 			<img src="images/logo.jpg" style="float:left; margin-left: 100px; padding-top: 10px; height: 120px" />
 			<img src="images/headVa.jpg" style="float:right; margin-left: 500px; padding-top: 25px; height: 110px;width: 400px" />
-			<div style="float:left;width: 100%;background-color:#0093AF;height:45%;border-radius:0px;">
+			<div style="float:left;width: 100%;background-color:#0093AF;border-radius:0px;">
 		<!-- <h1 style=" color:white;height:10%;font-style: arial;font-weight: bold;float:left">Vaccine List</h1>-->
 		
-		<table>
-			<tr>
-				<th>
-					<form action="VaccinelistCustServ" method="post">
-						<input style="color:white;background-color:#0093AF;border: none;
-			    outline:none;font-size:20px;font-style: arial;font-weight: bold;float:left" type="submit"
-											value="Vaccine Details"><br>
-					</form>
-				</th>
-				<th>
-					<form  action="DoctorDetailServ" method="post">
-						<input style="color:white;background-color:#0093AF;border: none;
-			    outline:none;font-size:20px;height:45%;font-style: arial;font-weight: bold" type="submit"
-											value="Doctor Details"><br>
-					</form>
-				</th>
-				<th>
-					<form  action="LogoutServ" method="post">
-						<input style="color:white;background-color:#0093AF;border: none;
-		    outline:none;font-size:20px;height:45%;font-style: arial;font-weight: bold;" type="submit" value="Log Out"><br>
-					</form>
-				</th>
-			</tr>		
-		</table>
+		<div class="tab">
+		<p style="padding-left:100px;font-style: arial;font-weight: bold;color:white;float:right">Hello <%=usename %>!!</p>
+			<form action="VaccinelistCustServ" method="post" class="tablinks">
+				<input style="color:white;background-color:#0093AF;border: none;outline:none;font-size:20px;height:45%;font-style: arial;font-weight: bold;float:left" type="submit"value="Vaccine Details">
+			</form>
+			<form  action="DoctorDetailServ" method="post" class="tablinks">
+				<input style="color:white;background-color:#0093AF;border: none;
+	    outline:none;font-size:20px;height:45%;font-style: arial;font-weight: bold" type="submit"
+									value="Doctor Details"><br>
+			</form>
+			<form  action="TodoVaccinelistServ" method="post" class="tablinks">
+				<input style="color:white;background-color:#0093AF;border: none;outline:none;font-size:20px;height:45%;font-style: arial;font-weight: bold" type="submit" value="To Do List"><br>
+			</form>
+			<form  action="DisplayQueryServ" method="post">
+				<input style="color:white;background-color:#0093AF;border: none;outline:none;font-size:20px;height:45%;font-style: arial;font-weight: bold" type="submit" value="Ask Queries"><br>
+			</form>
+			<form  action="LogoutServ" method="post" class="tablinks">
+				<input style="color:white;background-color:#0093AF;border: none;outline:none;font-size:20px;;font-style: arial;font-weight: bold;" type="submit" value="Log Out"><br>
+			</form>
+	  
+		</div>
 		
 	</div>
 	</div>
@@ -142,8 +139,12 @@ setTimeout("disableBackButton()", 0);
 					<td><%=(String)info.get("minnodoses")%></td>
 					<td>
 						<form action="AddToDoServ" method="post">
-							<input type="hidden" name="check" value="">
-							<input type="hidden" name="check1" value="">
+							<input type="hidden" name="check" value="<%=(String)info.get("name") %>">
+							<input type="hidden" name="check1" value="<%=(String)info.get("cost")%>">
+							<input type="hidden" name="check2" value="<%=(String)info.get("vendor")%>">
+							<input type="hidden" name="check3" value="<%=(String)info.get("disease")%>">
+							<input type="hidden" name="check4" value="<%=(String)info.get("minnodoses")%>">
+							
 							<input style="font-weight: bold" type="submit"
 								value="Add To Do List"
 								onclick="return confirm('Are you sure you want to Add?')">

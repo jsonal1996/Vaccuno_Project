@@ -63,6 +63,7 @@ public class Servlet_AddVaccine extends HttpServlet {
 			Vaccination v = new Vaccination();
 			v.addVacc(name,cost,vendor,disease,minNoDoses);
 			List<DBObject> resultSet = v.getdetails();
+
 			session.setAttribute("searchresults",resultSet);
 			//HttpSession session = request.getSession();
 			/* if(user == NULL){

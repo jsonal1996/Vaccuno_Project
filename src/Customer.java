@@ -8,6 +8,7 @@ import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
+import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
 import com.mongodb.MongoException;
@@ -71,8 +72,31 @@ public class Customer  {
 		else
 			return 0;
 		
-		}
-	
-		
 	}
+
+	public String findEmailbyUsername(String username){
+		MongoClientURI uri = new MongoClientURI("mongodb://sonal:qwerty@ds013475.mlab.com:13475/vaccuno");
+   		MongoClient mongoClient = new MongoClient(uri);
+        System.out.println("Connected to the database successfully");			
+        DB db = mongoClient.getDB("vaccuno");
+        DBCollection collection=db.getCollection("Customer");
+        BasicDBObject query = new BasicDBObject();
+		query.put("username", username);
+		BasicDBObject projection = new BasicDBObject();
+		projection.get("email");
+        
+		DBCursor findIterable = collection.find(query,projection);
+		
+		BasicDBObject info=new BasicDBObject();
+		while(findIterable.hasNext()){
+			info=(BasicDBObject) findIterable.next();
+		}
+		String re =(String) info.get("email");
+        System.out.println("Email is: "+re);			
+
+		return re;
+
+	}
+		
+}
 

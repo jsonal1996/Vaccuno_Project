@@ -49,8 +49,9 @@ public class loginDoctor extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("uname", username);
 			session.setAttribute("pass", password);
-			
-			response.sendRedirect("VaccinelistCustServ");
+			System.out.println(username+" "+password);
+
+			response.sendRedirect("AppointmentRequestServ");
 			return;
 		}
 		else

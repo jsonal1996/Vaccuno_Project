@@ -74,6 +74,8 @@ public class Vaccination {
 
 	   	}
 	   	
+	   
+	   	
 	   	void deleteVaccine(String gname){
 	   		MongoClientURI uri = new MongoClientURI("mongodb://sonal:qwerty@ds013475.mlab.com:13475/vaccuno");
 	   		MongoClient mongoClient = new MongoClient(uri);
@@ -103,6 +105,8 @@ public class Vaccination {
 			db.getCollection().updateOne(filter, updateOperationDocument);
 
 	   	}
+	   	
+	   	
 }
 
 	
